@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import NavBar from "../components/NavBar";
+import AgeGate from "../components/AgeGate";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
         <NavBar />
+        <AgeGate />
         <main className="grid min-h-[calc(100vh-4rem)] place-items-center">{children}</main>
       </body>
     </html>

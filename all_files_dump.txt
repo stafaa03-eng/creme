@@ -148,6 +148,7 @@ CONTENT_TYPE: text
 import "./globals.css";
 import type { Metadata } from "next";
 import NavBar from "../components/NavBar";
+import AgeGate from "../components/AgeGate";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -174,6 +175,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
         <NavBar />
+        <AgeGate />
         <main className="grid min-h-[calc(100vh-4rem)] place-items-center">{children}</main>
       </body>
     </html>
@@ -189,106 +191,136 @@ DIR: app
 RELATIVE_PATH: app\page.tsx
 CONTENT_TYPE: text
 ----- CONTENT BEGIN -----
+export default function HomePage() {
+  return <div className="grid min-h-[calc(100vh-4rem)] place-items-center text-3xl">homepage</div>;
+}
+
+----- CONTENT END -----
+===== FILE END =====
+
+===== FILE START =====
+NAME: layout.tsx
+DIR: app\underage
+RELATIVE_PATH: app\underage\layout.tsx
+CONTENT_TYPE: text
+----- CONTENT BEGIN -----
+import "../globals.css";
+export const metadata = { title: "21+ Required" };
+
+export default function UnderageLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="antialiased bg-emerald-900 text-white">
+        {/* no NavBar, no AgeGate here */}
+        {children}
+      </body>
+    </html>
+  );
+}
+
+----- CONTENT END -----
+===== FILE END =====
+
+===== FILE START =====
+NAME: page.tsx
+DIR: app\underage
+RELATIVE_PATH: app\underage\page.tsx
+CONTENT_TYPE: text
+----- CONTENT BEGIN -----
 import Image from "next/image";
 
-export default function Home() {
+export default function Underage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="w-full min-h-dvh grid place-items-center bg-emerald-100 text-emerald-900 p-6">
+      <div className="max-w-3xl text-center">
+        <div className="mb-6 flex items-center justify-center gap-3">
+          <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={56} height={56} className="rounded-full" />
+          <div className="leading-none tracking-wide">
+            <div className="text-lg font-extrabold">CREME</div>
+            <div className="text-sm text-emerald-800/80">CULTIVATION</div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <h1 className="mb-3 text-5xl font-extrabold">This site is for 21+ only.</h1>
+        <p className="mx-auto max-w-2xl text-emerald-800">
+          Creme Cultivation content is intended for adults. Please exit the site if you are under 21.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+----- CONTENT END -----
+===== FILE END =====
+
+===== FILE START =====
+NAME: AgeGate.tsx
+DIR: components
+RELATIVE_PATH: components\AgeGate.tsx
+CONTENT_TYPE: text
+----- CONTENT BEGIN -----
+"use client";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+
+export default function AgeGate() {
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const v = typeof window !== "undefined" && localStorage.getItem("ageVerified");
+    if (v !== "true") setOpen(true);
+  }, []);
+
+  if (!open) return null;
+
+  function yes() {
+    localStorage.setItem("ageVerified", "true");
+    setOpen(false);
+  }
+  function no() {
+    localStorage.setItem("ageVerified", "false");
+    setOpen(false);               // close the box
+    router.push("/underage");     // then go to the underage screen
+  }
+
+  return (
+    <div className="fixed inset-0 z-[100] grid place-items-center bg-black/60 p-4">
+      <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+        <div className="mb-4 flex items-center gap-3">
+          <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={36} height={36} className="rounded-full" />
+          <div className="leading-none tracking-wide text-black">
+            <div className="text-sm font-extrabold">CREME</div>
+            <div className="text-xs text-neutral-500">CULTIVATION</div>
+          </div>
+        </div>
+
+        <h2 className="mb-4 text-center text-2xl font-extrabold text-emerald-900">
+          Are you 21 or over?
+        </h2>
+
+        <div className="mb-5 flex items-center justify-center gap-3">
+          <button
+            onClick={yes}
+            className="rounded-full bg-emerald-600 px-6 py-2 text-white hover:bg-emerald-700 transition"
+          >
+            Yes
+          </button>
+          <button
+            onClick={no}
+            className="rounded-full bg-emerald-100 px-6 py-2 text-emerald-900 hover:bg-emerald-200 transition"
+          >
+            No
+          </button>
+        </div>
+
+        <p className="text-center text-sm text-neutral-600">
+          By entering this site you agree to our{" "}
+          <a href="/terms" className="font-semibold underline">Terms of Use</a> and{" "}
+          <a href="/privacy" className="font-semibold underline">Privacy Policy</a>.
+        </p>
+      </div>
     </div>
   );
 }
@@ -316,7 +348,9 @@ const links = [
 export default function NavBar() {
   return (
     <nav className="sticky top-0 z-50 border-b bg-white text-black">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+      {/* relative container lets us absolutely center the link group */}
+      <div className="relative mx-auto flex h-16 max-w-6xl items-center px-4">
+        {/* left brand */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/assets/LOGO.jpg"
@@ -332,7 +366,8 @@ export default function NavBar() {
           </div>
         </Link>
 
-        <div className="flex items-center gap-8 text-sm font-semibold">
+        {/* centered links */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-10 text-sm font-semibold">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -574,11 +609,14 @@ CONTENT_TYPE: text
 ----- CONTENT END -----
 ===== FILE END =====
 
-# Total files dumped: 15
+# Total files dumped: 18
 # File list:
 - app\globals.css
 - app\layout.tsx
 - app\page.tsx
+- app\underage\layout.tsx
+- app\underage\page.tsx
+- components\AgeGate.tsx
 - components\NavBar.tsx
 - lib\utils.ts
 - next.config.ts
