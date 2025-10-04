@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 function setCookie(name: string, value: string, maxAgeSeconds = 60 * 60 * 24 * 365) {
@@ -14,6 +14,15 @@ export default function Underage() {
   const [open, setOpen] = useState(false);
   const [checked, setChecked] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem("reverify") === "1") {
+        sessionStorage.removeItem("reverify");
+        setOpen(true);
+      }
+    } catch {}
+  }, []);
 
   function confirm() {
     if (!checked) return;
@@ -39,7 +48,10 @@ export default function Underage() {
 
         {/* Reverify entry point */}
         <button
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            try { sessionStorage.setItem("reverify", "1"); } catch {}
+            if (typeof window !== "undefined") window.location.reload();
+          }}
           className="mt-8 rounded-full bg-emerald-700 px-6 py-2 text-white hover:bg-emerald-800 transition"
         >
           Over 21 and misclicked?
