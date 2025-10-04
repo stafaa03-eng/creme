@@ -4,7 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 function setCookie(name: string, value: string, maxAgeSeconds = 60 * 60 * 24 * 365) {
-  document.cookie = `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax; Secure`;
+  const secure = typeof window !== "undefined" && window.location.protocol === "https:";
+  document.cookie =
+    `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax` +
+    (secure ? "; Secure" : "");
 }
 
 export default function Underage() {

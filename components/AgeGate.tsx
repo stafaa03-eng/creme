@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 function getCookie(name: string) {
   return document.cookie
@@ -11,20 +11,24 @@ function getCookie(name: string) {
 }
 
 function setCookie(name: string, value: string, maxAgeSeconds = 60 * 60 * 24 * 365) {
-  document.cookie = `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax; Secure`;
+  const secure = typeof window !== "undefined" && window.location.protocol === "https:";
+  document.cookie =
+    `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax` +
+    (secure ? "; Secure" : "");
 }
 
 export default function AgeGate() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
+  const pathname = usePathname();
+
   useEffect(() => {
     const v = getCookie("ageVerified"); // "true" | "false" | undefined
-    // Prompt only when not explicitly false and not already verified
-    if (v !== "true" && window.location.pathname === "/") setOpen(true);
-  }, []);
+    setOpen(pathname === "/" && v !== "true");
+  }, [pathname]);
 
-  if (!open) return null;
+  if (!open || pathname !== "/") return null;
 
   function yes() {
     setCookie("ageVerified", "true");
