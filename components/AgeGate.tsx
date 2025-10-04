@@ -42,9 +42,8 @@ export default function AgeGate() {
 
   function yes() {
     setCookie("ageVerified", "true");
-    // Write-through to sessionStorage too so storage event fires consistently
-    try { sessionStorage.setItem("ageVerified", "true"); } catch {}
-    setOpen(false); // unmounts next render
+    // force a full reload so any overlay/state is cleared immediately
+    if (typeof window !== "undefined") window.location.reload();
   }
   function no() {
     setCookie("ageVerified", "false");
