@@ -12,13 +12,18 @@ export default function CremePage() {
 
       {/* Centered Logo and Title */}
       <div className="flex flex-col justify-center items-center text-center pt-32 px-6">
-        <Image
-          src="/assets/CREMEProduct.jpg"
-          alt="Creme Packaging"
-          width={420}
-          height={560}
-          className="mb-10 drop-shadow-[0_0_90px_rgba(255,215,0,0.15)]"
-        />
+        {/* Product image with always-on gold glow */}
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-0 -z-10 blur-2xl rounded-3xl
+                          bg-[radial-gradient(ellipse_at_center,rgba(234,179,8,0.45)_0%,rgba(234,179,8,0.18)_40%,transparent_70%)]" />
+          <Image
+            src="/assets/CREMEProduct.jpg"
+            alt="Creme Packaging"
+            width={420}
+            height={560}
+            className="mb-10 rounded-2xl ring-1 ring-yellow-400/30 drop-shadow-[0_0_90px_rgba(255,215,0,0.28)]"
+          />
+        </div>
 
 
         {/* Shimmering Title */}
@@ -70,12 +75,12 @@ export default function CremePage() {
 
 
             {/* right links */}
-            <nav className="flex items-center gap-12 text-base">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -83,10 +88,13 @@ export default function CremePage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Terms of Service
               </a>
+              <Link href="/contact" className="hover:underline whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
 

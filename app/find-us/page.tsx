@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function FindUsPage() {
@@ -48,20 +49,20 @@ export default function FindUsPage() {
       {/* Footer */}
       <footer className="bg-black text-white">
         <div className="mx-auto w-full max-w-7xl px-8 py-14">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center gap-4 mb-6 md:mb-0">
               <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={52} height={52} className="rounded-full" />
               <div className="leading-none tracking-wide">
                 <div className="text-base font-extrabold">CREME</div>
                 <div className="text-sm text-neutral-400">CULTIVATION</div>
               </div>
             </div>
-            <nav className="flex items-center gap-12 text-base">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -69,10 +70,13 @@ export default function FindUsPage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Terms of Service
               </a>
+              <Link href="/contact" className="hover:underline whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
           <hr className="mt-10 border-white/10" />

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const links = [
@@ -12,14 +12,20 @@ const links = [
   { href: "/creme", label: "CRÈME", special: true },
 ];
 
-// Mobile-safe link: navigate on tap when there wasn't a drag
+// Tap-only navigation helper
 function MobileTapLink({
   href,
   className,
   children,
-}: React.PropsWithChildren<{ href: string; className?: string }>) {
+  onTap,
+}: React.PropsWithChildren<{ href: string; className?: string; onTap?: () => void }>) {
   const router = useRouter();
   const start = useRef<{ x: number; y: number } | null>(null);
+
+  const go = () => {
+    onTap?.();
+    router.push(href);
+  };
 
   return (
     <a
@@ -34,10 +40,9 @@ function MobileTapLink({
         start.current = null;
         if (dx < 6 && dy < 6) {
           e.preventDefault();
-          router.push(href); // treat as tap, not scroll
+          go();
         }
       }}
-      // fallback for browsers without Pointer Events
       onTouchEnd={(e) => {
         if (e.changedTouches?.[0] && start.current) {
           const t = e.changedTouches[0];
@@ -46,7 +51,7 @@ function MobileTapLink({
           start.current = null;
           if (dx < 6 && dy < 6) {
             e.preventDefault();
-            router.push(href);
+            go();
           }
         }
       }}
@@ -57,10 +62,24 @@ function MobileTapLink({
 }
 
 export default function NavBar() {
+  const railRef = useRef<HTMLDivElement>(null);
+
+  // restore scroll position once on mount
+  useEffect(() => {
+    const x = Number(sessionStorage.getItem("navScrollX") || "0");
+    if (railRef.current) railRef.current.scrollLeft = x;
+  }, []);
+
+  // keep the latest position saved while user scrolls
+  const remember = () => {
+    const el = railRef.current;
+    if (el) sessionStorage.setItem("navScrollX", String(el.scrollLeft));
+  };
+
   return (
     <nav className="sticky top-0 z-50 border-b bg-white text-black">
       <div className="mx-auto flex h-16 max-w-6xl items-center px-4">
-        {/* MOBILE: brand left (35%), scrollable links right (65%) */}
+        {/* MOBILE */}
         <div className="flex w-full items-center md:hidden">
           <Link href="/" className="flex min-w-[35%] basis-[35%] items-center gap-3">
             <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={36} height={36} className="rounded-full" priority />
@@ -70,7 +89,10 @@ export default function NavBar() {
             </div>
           </Link>
 
+          {/* scrollable link rail */}
           <div
+            ref={railRef}
+            onScroll={remember}
             className="
               min-w-0 flex-1 basis-[65%] overflow-x-auto no-scrollbar whitespace-nowrap pl-4
               [touch-action:pan-x] [overscroll-behavior-x:contain] [-webkit-overflow-scrolling:touch]
@@ -81,6 +103,7 @@ export default function NavBar() {
                 <MobileTapLink
                   key={l.href}
                   href={l.href}
+                  onTap={remember}
                   className={
                     (l.special
                       ? "text-[gold] font-extrabold tracking-wide [text-shadow:_0_0_4px_#10b981,_0_0_6px_#10b981]"

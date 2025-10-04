@@ -67,12 +67,12 @@ export default function HomePage() {
             </div>
 
             {/* Right nav links */}
-            <nav className="flex items-center justify-center md:justify-end gap-8 text-sm text-neutral-300">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition"
+                className="hover:text-white transition whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -80,11 +80,13 @@ export default function HomePage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition"
+                className="hover:text-white transition whitespace-nowrap"
               >
                 Terms of Service
               </a>
-              <Link href="https://www.instagram.com/cremecultivation" target="_blank" className="hover:text-white transition">Follow Us</Link>
+              <Link href="/contact" className="hover:text-white transition whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
 

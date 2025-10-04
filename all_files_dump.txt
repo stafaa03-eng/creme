@@ -83,9 +83,9 @@ export default function ContactPage() {
 
       <footer className="bg-black text-white">
         <div className="mx-auto w-full max-w-7xl px-8 py-14">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between">
             {/* left brand */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mb-6 md:mb-0">
               <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={52} height={52} className="rounded-full" />
               <div className="leading-none tracking-wide">
                 <div className="text-base font-extrabold">CREME</div>
@@ -94,12 +94,12 @@ export default function ContactPage() {
             </div>
 
             {/* right links */}
-            <nav className="flex items-center gap-12 text-base">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -107,10 +107,13 @@ export default function ContactPage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Terms of Service
               </a>
+              <Link href="/contact" className="hover:underline whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
 
@@ -209,12 +212,12 @@ export default function CremePage() {
 
 
             {/* right links */}
-            <nav className="flex items-center gap-12 text-base">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -222,10 +225,13 @@ export default function CremePage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Terms of Service
               </a>
+              <Link href="/contact" className="hover:underline whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
 
@@ -253,6 +259,7 @@ RELATIVE_PATH: app\find-us\page.tsx
 CONTENT_TYPE: text
 ----- CONTENT BEGIN -----
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function FindUsPage() {
@@ -302,20 +309,20 @@ export default function FindUsPage() {
       {/* Footer */}
       <footer className="bg-black text-white">
         <div className="mx-auto w-full max-w-7xl px-8 py-14">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center gap-4 mb-6 md:mb-0">
               <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={52} height={52} className="rounded-full" />
               <div className="leading-none tracking-wide">
                 <div className="text-base font-extrabold">CREME</div>
                 <div className="text-sm text-neutral-400">CULTIVATION</div>
               </div>
             </div>
-            <nav className="flex items-center gap-12 text-base">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -323,10 +330,13 @@ export default function FindUsPage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Terms of Service
               </a>
+              <Link href="/contact" className="hover:underline whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
           <hr className="mt-10 border-white/10" />
@@ -421,9 +431,9 @@ export default function GalleryPage() {
       {/* footer stays identical but pinned to bottom */}
       <footer className="bg-black text-white mt-0 w-full">
         <div className="mx-auto w-full max-w-7xl px-8 py-14">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between">
             {/* left brand */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mb-6 md:mb-0">
               <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={52} height={52} className="rounded-full" />
               <div className="leading-none tracking-wide">
                 <div className="text-base font-extrabold">CREME</div>
@@ -432,12 +442,12 @@ export default function GalleryPage() {
             </div>
 
             {/* right links */}
-            <nav className="flex items-center gap-12 text-base">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -445,10 +455,13 @@ export default function GalleryPage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline whitespace-nowrap"
               >
                 Terms of Service
               </a>
+              <Link href="/contact" className="hover:underline whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
 
@@ -724,12 +737,12 @@ export default function HomePage() {
             </div>
 
             {/* Right nav links */}
-            <nav className="flex items-center justify-center md:justify-end gap-8 text-sm text-neutral-300">
+            <nav className="flex items-center justify-center gap-6 sm:gap-12 text-sm sm:text-base flex-nowrap">
               <a
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition"
+                className="hover:text-white transition whitespace-nowrap"
               >
                 Privacy Policy
               </a>
@@ -737,11 +750,13 @@ export default function HomePage() {
                 href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition"
+                className="hover:text-white transition whitespace-nowrap"
               >
                 Terms of Service
               </a>
-              <Link href="https://www.instagram.com/cremecultivation" target="_blank" className="hover:text-white transition">Follow Us</Link>
+              <Link href="/contact" className="hover:text-white transition whitespace-nowrap">
+                Follow Us
+              </Link>
             </nav>
           </div>
 
@@ -857,7 +872,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 function setCookie(name: string, value: string, maxAgeSeconds = 60 * 60 * 24 * 365) {
-  document.cookie = `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax; Secure`;
+  const secure = typeof window !== "undefined" && window.location.protocol === "https:";
+  document.cookie =
+    `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax` +
+    (secure ? "; Secure" : "");
 }
 
 export default function Underage() {
@@ -941,7 +959,7 @@ CONTENT_TYPE: text
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 function getCookie(name: string) {
   return document.cookie
@@ -951,20 +969,24 @@ function getCookie(name: string) {
 }
 
 function setCookie(name: string, value: string, maxAgeSeconds = 60 * 60 * 24 * 365) {
-  document.cookie = `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax; Secure`;
+  const secure = typeof window !== "undefined" && window.location.protocol === "https:";
+  document.cookie =
+    `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax` +
+    (secure ? "; Secure" : "");
 }
 
 export default function AgeGate() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
+  const pathname = usePathname();
+
   useEffect(() => {
     const v = getCookie("ageVerified"); // "true" | "false" | undefined
-    // Prompt only when not explicitly false and not already verified
-    if (v !== "true" && window.location.pathname === "/") setOpen(true);
-  }, []);
+    setOpen(pathname === "/" && v !== "true");
+  }, [pathname]);
 
-  if (!open) return null;
+  if (!open || pathname !== "/") return null;
 
   function yes() {
     setCookie("ageVerified", "true");
@@ -1029,7 +1051,7 @@ CONTENT_TYPE: text
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const links = [
@@ -1040,14 +1062,20 @@ const links = [
   { href: "/creme", label: "CRÈME", special: true },
 ];
 
-// Mobile-safe link: navigate on tap when there wasn't a drag
+// Tap-only navigation helper
 function MobileTapLink({
   href,
   className,
   children,
-}: React.PropsWithChildren<{ href: string; className?: string }>) {
+  onTap,
+}: React.PropsWithChildren<{ href: string; className?: string; onTap?: () => void }>) {
   const router = useRouter();
   const start = useRef<{ x: number; y: number } | null>(null);
+
+  const go = () => {
+    onTap?.();
+    router.push(href);
+  };
 
   return (
     <a
@@ -1060,16 +1088,21 @@ function MobileTapLink({
         const dx = Math.abs(e.clientX - s.x);
         const dy = Math.abs(e.clientY - s.y);
         start.current = null;
-        if (dx < 6 && dy < 6) router.push(href); // treat as tap, not scroll
+        if (dx < 6 && dy < 6) {
+          e.preventDefault();
+          go();
+        }
       }}
-      // fallback for browsers without Pointer Events
       onTouchEnd={(e) => {
         if (e.changedTouches?.[0] && start.current) {
           const t = e.changedTouches[0];
           const dx = Math.abs(t.clientX - start.current.x);
           const dy = Math.abs(t.clientY - start.current.y);
           start.current = null;
-          if (dx < 6 && dy < 6) router.push(href);
+          if (dx < 6 && dy < 6) {
+            e.preventDefault();
+            go();
+          }
         }
       }}
     >
@@ -1079,10 +1112,24 @@ function MobileTapLink({
 }
 
 export default function NavBar() {
+  const railRef = useRef<HTMLDivElement>(null);
+
+  // restore scroll position once on mount
+  useEffect(() => {
+    const x = Number(sessionStorage.getItem("navScrollX") || "0");
+    if (railRef.current) railRef.current.scrollLeft = x;
+  }, []);
+
+  // keep the latest position saved while user scrolls
+  const remember = () => {
+    const el = railRef.current;
+    if (el) sessionStorage.setItem("navScrollX", String(el.scrollLeft));
+  };
+
   return (
     <nav className="sticky top-0 z-50 border-b bg-white text-black">
       <div className="mx-auto flex h-16 max-w-6xl items-center px-4">
-        {/* MOBILE: brand left (35%), scrollable links right (65%) */}
+        {/* MOBILE */}
         <div className="flex w-full items-center md:hidden">
           <Link href="/" className="flex min-w-[35%] basis-[35%] items-center gap-3">
             <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={36} height={36} className="rounded-full" priority />
@@ -1092,7 +1139,10 @@ export default function NavBar() {
             </div>
           </Link>
 
+          {/* scrollable link rail */}
           <div
+            ref={railRef}
+            onScroll={remember}
             className="
               min-w-0 flex-1 basis-[65%] overflow-x-auto no-scrollbar whitespace-nowrap pl-4
               [touch-action:pan-x] [overscroll-behavior-x:contain] [-webkit-overflow-scrolling:touch]
@@ -1103,6 +1153,7 @@ export default function NavBar() {
                 <MobileTapLink
                   key={l.href}
                   href={l.href}
+                  onTap={remember}
                   className={
                     (l.special
                       ? "text-[gold] font-extrabold tracking-wide [text-shadow:_0_0_4px_#10b981,_0_0_6px_#10b981]"
