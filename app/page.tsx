@@ -16,31 +16,12 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Phone with spinning buds */}
+        {/* Phone with subtle halo */}
         <div className="relative flex justify-center items-center py-20">
-          {/* LEFT bud (match phone screen height) */}
-          <img
-            src="/assets/SpinningBud1-unscreen.gif"
-            alt="Spinning bud left"
-            className="
-              pointer-events-none absolute z-10 hidden sm:block
-              h-[620px] sm:h-[700px] md:h-[800px] w-auto
-              right-[calc(50%+180px)] sm:right-[calc(50%+200px)] md:right-[calc(50%+230px)]
-            "
-          />
-
+          {/* ambient glow behind phone */}
+          <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl opacity-70
+                          bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.25)_0%,rgba(16,185,129,0.08)_40%,transparent_70%)]" />
           <PhonePlayer />
-
-          {/* RIGHT bud (match phone screen height) */}
-          <img
-            src="/assets/SpinningBud2-unscreen.gif"
-            alt="Spinning bud right"
-            className="
-              pointer-events-none absolute z-10 hidden sm:block
-              h-[620px] sm:h-[700px] md:h-[800px] w-auto
-              left-[calc(50%+180px)] sm:left-[calc(50%+200px)] md:left-[calc(50%+230px)]
-            "
-          />
         </div>
 
         <div className="text-center text-sm text-neutral-500 pb-10">
