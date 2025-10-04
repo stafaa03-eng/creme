@@ -47,9 +47,8 @@ export default function AgeGate() {
   }
   function no() {
     setCookie("ageVerified", "false");
-    try { sessionStorage.setItem("ageVerified", "false"); } catch {}
-    setOpen(false);
-    router.replace("/underage");
+    // full-load into the underage page
+    if (typeof window !== "undefined") window.location.href = "/underage";
   }
 
   return (
