@@ -26,8 +26,11 @@ export default function Underage() {
 
   function confirm() {
     if (!checked) return;
-    setCookie("ageVerified", "true");
-    router.replace("/"); // middleware will now allow full site
+    // set cookie, then full load into home so everything reinitializes
+    const secure = typeof window !== "undefined" && window.location.protocol === "https:";
+    document.cookie =
+      `ageVerified=true; Max-Age=${60 * 60 * 24 * 365}; Path=/; SameSite=Lax` + (secure ? "; Secure" : "");
+    if (typeof window !== "undefined") window.location.href = "/"; // hard redirect fixes the "does nothing" issue
   }
 
   return (
