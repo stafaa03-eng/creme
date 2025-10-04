@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#001000] text-white`}>
         <NavBar />
         <AgeGate />
         <main className="grid min-h-[calc(100vh-4rem)] place-items-center">{children}</main>

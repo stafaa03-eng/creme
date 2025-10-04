@@ -5,8 +5,9 @@ import Image from "next/image";
 const links = [
   { href: "/", label: "Home" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/find-us", label: "Find Us" },
   { href: "/contact", label: "Contact" },
+  { href: "/creme", label: "CRÈME", special: true },
 ];
 
 export default function NavBar() {
@@ -32,11 +33,15 @@ export default function NavBar() {
 
         {/* centered links */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-10 text-sm font-semibold">
-          {links.map((l) => (
+{links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="relative py-2 after:absolute after:left-0 after:right-0 after:-bottom-2 after:h-0.5 after:scale-x-0 after:bg-emerald-500 after:transition hover:after:scale-x-100"
+              className={
+                l.special
+                  ? "text-[gold] font-extrabold tracking-wide transition hover:scale-105 [text-shadow:_0_0_4px_#10b981,_0_0_6px_#10b981] stroke-[0.4px] stroke-emerald-500"
+                  : "relative py-2 after:absolute after:left-0 after:right-0 after:-bottom-2 after:h-0.5 after:scale-x-0 after:bg-emerald-500 after:transition hover:after:scale-x-100"
+              }
             >
               {l.label}
             </Link>

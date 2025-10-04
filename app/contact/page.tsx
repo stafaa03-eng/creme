@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="w-full bg-white text-black">
+    <div className="w-full bg-[#001000] text-white">
       {/* HERO with background image (logo only above, no brand text) */}
       <section className="relative h-72 sm:h-80 md:h-96 w-full">
         <Image src="/assets/RandomBud.jpg" alt="Creme Cultivation" fill priority className="object-cover" />
@@ -80,8 +80,22 @@ export default function ContactPage() {
 
             {/* right links */}
             <nav className="flex items-center gap-12 text-base">
-              <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-              <Link href="/terms" className="hover:underline">Terms of Service</Link>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Terms of Service
+              </a>
             </nav>
           </div>
 

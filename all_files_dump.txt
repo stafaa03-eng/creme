@@ -19,7 +19,7 @@ import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="w-full bg-white text-black">
+    <div className="w-full bg-[#001000] text-white">
       {/* HERO with background image (logo only above, no brand text) */}
       <section className="relative h-72 sm:h-80 md:h-96 w-full">
         <Image src="/assets/RandomBud.jpg" alt="Creme Cultivation" fill priority className="object-cover" />
@@ -36,8 +36,8 @@ export default function ContactPage() {
       </section>
 
       {/* INFO CARD (no overlap) */}
-      <section className="relative z-10 mx-auto max-w-6xl px-4 mt-8 pb-28">
-        <div className="rounded-2xl bg-black text-white p-8 md:p-10 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.45)]">
+      <section className="relative z-10 mx-auto max-w-7xl px-6 mt-16 mb-16">
+        <div className="rounded-2xl bg-black text-white p-9 md:p-12 shadow-[0_28px_90px_-24px_rgba(0,0,0,0.45)]">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
               <div className="mb-3 flex items-center gap-3 text-2xl font-semibold">
@@ -95,8 +95,22 @@ export default function ContactPage() {
 
             {/* right links */}
             <nav className="flex items-center gap-12 text-base">
-              <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-              <Link href="/terms" className="hover:underline">Terms of Service</Link>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Terms of Service
+              </a>
             </nav>
           </div>
 
@@ -104,6 +118,342 @@ export default function ContactPage() {
           <hr className="mt-10 border-white/10" />
 
           {/* © row */}
+          <div className="mt-6 text-center text-sm text-neutral-400 space-y-1">
+            <div>© 2025 Creme Cultivation. All rights reserved.</div>
+            <div className="text-neutral-500">Cultivating quality since day one.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+----- CONTENT END -----
+===== FILE END =====
+
+===== FILE START =====
+NAME: page.tsx
+DIR: app\creme
+RELATIVE_PATH: app\creme\page.tsx
+CONTENT_TYPE: text
+----- CONTENT BEGIN -----
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+
+export default function CremePage() {
+  return (
+    <div className="min-h-screen w-full bg-[#001000] text-white relative overflow-hidden">
+      {/* Gold ambient shimmer gradient */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#001000]/80 via-transparent to-yellow-800/10 animate-pulse-slow" />
+
+
+      {/* Centered Logo and Title */}
+      <div className="flex flex-col justify-center items-center text-center pt-32 px-6">
+        <Image
+          src="/assets/CREMEProduct.jpg"
+          alt="Creme Packaging"
+          width={420}
+          height={560}
+          className="mb-10 drop-shadow-[0_0_90px_rgba(255,215,0,0.15)]"
+        />
+
+
+        {/* Shimmering Title */}
+        <h1 className="text-6xl sm:text-7xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 animate-gold-hover">
+          CRÈME
+        </h1>
+
+
+        {/* Brand-forward tagline */}
+        <p className="mt-6 max-w-xl text-sm sm:text-base text-yellow-100/85 leading-relaxed">
+          The classiest. The newest. The most exclusive. Crème has arrived.
+        </p>
+        <p className="mt-2 text-yellow-100/70 italic">
+          The Crème De La Crème.
+        </p>
+
+
+        {/* Subtle Gold Divider */}
+        <div className="mt-10 h-[1px] w-48 bg-gradient-to-r from-transparent via-yellow-500 to-transparent animate-fade-in" />
+
+
+        {/* CTA button */}
+        <Link
+          href="/find-us"
+          className="mt-14 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-300 px-6 py-3 text-sm font-semibold text-black shadow-[0_10px_40px_-10px_rgba(234,179,8,0.6)] transition-transform hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        >
+          Find CRÈME near you
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
+
+
+      {/* Ornamental SVGs (removed) */}
+      <div className="hidden" />
+
+
+      {/* Footer */}
+      <footer className="mt-32 bg-black text-white">
+        <div className="mx-auto w-full max-w-7xl px-8 py-14">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            {/* left brand */}
+            <div className="flex items-center gap-4 mb-6 md:mb-0">
+              <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={52} height={52} className="rounded-full" />
+              <div className="leading-none tracking-wide">
+                <div className="text-base font-extrabold">CREME</div>
+                <div className="text-sm text-neutral-400">CULTIVATION</div>
+              </div>
+            </div>
+
+
+            {/* right links */}
+            <nav className="flex items-center gap-12 text-base">
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Terms of Service
+              </a>
+            </nav>
+          </div>
+
+
+          <hr className="mt-10 border-white/10" />
+
+
+          <div className="mt-6 text-center text-sm text-neutral-400 space-y-1">
+            <div>© 2025 Creme Cultivation. All rights reserved.</div>
+            <div className="text-neutral-500">Cultivating quality since day one.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+----- CONTENT END -----
+===== FILE END =====
+
+===== FILE START =====
+NAME: page.tsx
+DIR: app\find-us
+RELATIVE_PATH: app\find-us\page.tsx
+CONTENT_TYPE: text
+----- CONTENT BEGIN -----
+import Image from "next/image";
+
+
+export default function FindUsPage() {
+  const banners = [
+    "/assets/FindUs1.jpg",
+    "/assets/FindUs2.jpg",
+    "/assets/FindUs3.jpg"
+  ];
+
+
+  return (
+    <div className="min-h-screen w-full bg-[#001000] text-white overflow-x-hidden relative">
+      {/* Glow FX */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#001000]/80 via-transparent to-emerald-900/10 animate-pulse-slow z-0" />
+
+
+      {/* Hero Intro */}
+      <section className="relative z-10 text-center pt-32 pb-10 px-6">
+        <h1 className="text-5xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-emerald-200 via-lime-400 to-emerald-200 animate-gold-hover drop-shadow-[0_0_10px_rgba(0,255,128,0.2)]">
+          WHERE TO FIND CRÈME
+        </h1>
+        <p className="mt-6 max-w-2xl mx-auto text-sm sm:text-base text-emerald-100/80 italic">
+          We are stocked in 50+ dispensaries and growing. Here are just a few of our retail partners:
+        </p>
+      </section>
+
+
+      {/* Banners */}
+      <section className="relative z-10 flex flex-col items-center gap-16 px-6 pb-24">
+        {banners.map((src, i) => (
+          <div
+            key={src}
+            className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-[0_20px_80px_-10px_rgba(0,255,128,0.2)] transition-transform duration-300 hover:scale-[1.02]"
+          >
+            <Image
+              src={src}
+              alt={`Dispensary Banner ${i + 1}`}
+              width={900}
+              height={1200}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        ))}
+      </section>
+
+
+      {/* Footer */}
+      <footer className="bg-black text-white">
+        <div className="mx-auto w-full max-w-7xl px-8 py-14">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={52} height={52} className="rounded-full" />
+              <div className="leading-none tracking-wide">
+                <div className="text-base font-extrabold">CREME</div>
+                <div className="text-sm text-neutral-400">CULTIVATION</div>
+              </div>
+            </div>
+            <nav className="flex items-center gap-12 text-base">
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Terms of Service
+              </a>
+            </nav>
+          </div>
+          <hr className="mt-10 border-white/10" />
+          <div className="mt-6 text-center text-sm text-neutral-400 space-y-1">
+            <div>© 2025 Creme Cultivation. All rights reserved.</div>
+            <div className="text-neutral-500">Cultivating quality since day one.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+----- CONTENT END -----
+===== FILE END =====
+
+===== FILE START =====
+NAME: page.tsx
+DIR: app\gallery
+RELATIVE_PATH: app\gallery\page.tsx
+CONTENT_TYPE: text
+----- CONTENT BEGIN -----
+import Image from "next/image";
+import Link from "next/link";
+
+
+const gallery = [
+  {
+    src: "/assets/CremeDeLaCremeBud.jpg",
+    alt: "Creme De La Creme Bud",
+    caption: "Creme De La Creme"
+  },
+  {
+    src: "/assets/LemonCherryBud.jpg",
+    alt: "Lemon Cherry Bud",
+    caption: "Lemon Cherry, zested and ready"
+  },
+  {
+    src: "/assets/CremeGoodGoodBud.jpg",
+    alt: "Creme Good Good Bud",
+    caption: "Stone-cold stacks"
+  },
+  {
+    src: "/assets/ProperFlushBud.jpg",
+    alt: "Proper Flush Bud",
+    caption: "Proper Flush"
+  },
+  {
+    src: "/assets/GrowingNursery.jpg",
+    alt: "Nursery Growth",
+    caption: "Vegging out in the nursery"
+  },
+  {
+    src: "/assets/RandomBud.jpg",
+    alt: "Random Bud",
+    caption: "Racks on racks of green"
+  },
+];
+
+
+export default function GalleryPage() {
+  return (
+    <div className="self-stretch w-full min-h-[calc(100vh-4rem)] bg-[#001000] text-white flex flex-col">
+      {/* main content */}
+      <main className="flex-1 px-4 sm:px-6 md:px-12 pt-24 pb-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl font-extrabold">Gallery</h1>
+          <p className="text-neutral-400 mt-2">From nursery to harvest — no filters, just flower.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {gallery.map((item, i) => (
+            <div
+              key={i}
+              className="group relative overflow-hidden rounded-2xl bg-neutral-900 shadow-lg hover:shadow-emerald-600/20 transition-all duration-300 aspect-[3/4]"
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              />
+              <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <p className="text-sm text-white/90">{item.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
+
+      {/* footer stays identical but pinned to bottom */}
+      <footer className="bg-black text-white mt-0 w-full">
+        <div className="mx-auto w-full max-w-7xl px-8 py-14">
+          <div className="flex items-center justify-between">
+            {/* left brand */}
+            <div className="flex items-center gap-4">
+              <Image src="/assets/LOGO.jpg" alt="Creme Cultivation" width={52} height={52} className="rounded-full" />
+              <div className="leading-none tracking-wide">
+                <div className="text-base font-extrabold">CREME</div>
+                <div className="text-sm text-neutral-400">CULTIVATION</div>
+              </div>
+            </div>
+
+            {/* right links */}
+            <nav className="flex items-center gap-12 text-base">
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Terms of Service
+              </a>
+            </nav>
+          </div>
+
+          <hr className="mt-10 border-white/10" />
+
           <div className="mt-6 text-center text-sm text-neutral-400 space-y-1">
             <div>© 2025 Creme Cultivation. All rights reserved.</div>
             <div className="text-neutral-500">Cultivating quality since day one.</div>
@@ -283,7 +633,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#001000] text-white`}>
         <NavBar />
         <AgeGate />
         <main className="grid min-h-[calc(100vh-4rem)] place-items-center">{children}</main>
@@ -301,8 +651,108 @@ DIR: app
 RELATIVE_PATH: app\page.tsx
 CONTENT_TYPE: text
 ----- CONTENT BEGIN -----
+import PhonePlayer from "../components/PhonePlayer";
+import Image from "next/image";
+import Link from "next/link";
+
 export default function HomePage() {
-  return <div className="grid min-h-[calc(100vh-4rem)] place-items-center text-3xl">homepage</div>;
+  return (
+    <div className="w-full bg-[#001000] text-white">
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="text-center px-6 pt-16">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+            Crafted Flower. Clean Process.
+          </h1>
+          <p className="mt-3 text-neutral-300">
+            Creme Cultivation • Quality content. Quality product.
+          </p>
+        </div>
+
+        {/* Phone with spinning buds */}
+        <div className="relative flex justify-center items-center py-20">
+          {/* LEFT bud (match phone screen height) */}
+          <img
+            src="/assets/SpinningBud1-unscreen.gif"
+            alt="Spinning bud left"
+            className="
+              pointer-events-none absolute z-10 hidden sm:block
+              h-[620px] sm:h-[700px] md:h-[800px] w-auto
+              right-[calc(50%+180px)] sm:right-[calc(50%+200px)] md:right-[calc(50%+230px)]
+            "
+          />
+
+          <PhonePlayer />
+
+          {/* RIGHT bud (match phone screen height) */}
+          <img
+            src="/assets/SpinningBud2-unscreen.gif"
+            alt="Spinning bud right"
+            className="
+              pointer-events-none absolute z-10 hidden sm:block
+              h-[620px] sm:h-[700px] md:h-[800px] w-auto
+              left-[calc(50%+180px)] sm:left-[calc(50%+200px)] md:left-[calc(50%+230px)]
+            "
+          />
+        </div>
+
+        <div className="text-center text-sm text-neutral-500 pb-10">
+          Shot on site • Strain highlights • No audio
+        </div>
+      </section>
+
+      <footer className="bg-black text-white">
+        <div className="mx-auto w-full max-w-7xl px-8 py-12">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+            {/* Left brand */}
+            <div className="flex items-center gap-4 justify-center md:justify-start mb-6 md:mb-0">
+              <Image
+                src="/assets/LOGO.jpg"
+                alt="Creme Cultivation"
+                width={48}
+                height={48}
+                className="rounded-full ring-1 ring-emerald-500/30"
+              />
+              <div className="leading-tight tracking-wide">
+                <div className="text-base font-extrabold uppercase">CREME</div>
+                <div className="text-xs text-neutral-400 uppercase tracking-widest">Cultivation</div>
+              </div>
+            </div>
+
+            {/* Right nav links */}
+            <nav className="flex items-center justify-center md:justify-end gap-8 text-sm text-neutral-300">
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                Terms of Service
+              </a>
+              <Link href="https://www.instagram.com/cremecultivation" target="_blank" className="hover:text-white transition">Follow Us</Link>
+            </nav>
+          </div>
+
+          {/* Divider */}
+          <hr className="mt-8 border-white/10" />
+
+          {/* Bottom text */}
+          <div className="mt-6 text-center text-xs text-neutral-500 space-y-1">
+            <div>© 2025 Creme Cultivation. All rights reserved.</div>
+            <div className="text-neutral-600">Cultivating quality since day one.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
 
 ----- CONTENT END -----
@@ -315,7 +765,24 @@ RELATIVE_PATH: app\privacy\page.tsx
 CONTENT_TYPE: text
 ----- CONTENT BEGIN -----
 export default function PrivacyPage() {
-  return <div className="p-8">Privacy Policy (placeholder)</div>;
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
+      <p className="mb-2">
+        The Privacy Policy for this site is hosted externally. You can view it here:
+      </p>
+      <p>
+        <a
+          href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold underline"
+        >
+          View Privacy Policy
+        </a>
+      </p>
+    </div>
+  );
 }
 
 ----- CONTENT END -----
@@ -328,7 +795,24 @@ RELATIVE_PATH: app\terms\page.tsx
 CONTENT_TYPE: text
 ----- CONTENT BEGIN -----
 export default function TermsPage() {
-  return <div className="p-8">Terms of Service (placeholder)</div>;
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Terms of Service</h1>
+      <p className="mb-2">
+        The Terms of Service for this site are hosted externally. You can view them here:
+      </p>
+      <p>
+        <a
+          href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold underline"
+        >
+          View Terms of Service
+        </a>
+      </p>
+    </div>
+  );
 }
 
 ----- CONTENT END -----
@@ -363,9 +847,26 @@ DIR: app\underage
 RELATIVE_PATH: app\underage\page.tsx
 CONTENT_TYPE: text
 ----- CONTENT BEGIN -----
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+function setCookie(name: string, value: string, maxAgeSeconds = 60 * 60 * 24 * 365) {
+  document.cookie = `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax; Secure`;
+}
 
 export default function Underage() {
+  const [open, setOpen] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const router = useRouter();
+
+  function confirm() {
+    if (!checked) return;
+    setCookie("ageVerified", "true");
+    router.replace("/"); // middleware will now allow full site
+  }
+
   return (
     <div className="w-full h-full grid place-items-center bg-emerald-100 text-emerald-900 p-6 overflow-auto">
       <div className="max-w-3xl text-center">
@@ -381,7 +882,45 @@ export default function Underage() {
         <p className="mx-auto max-w-2xl text-emerald-800">
           Creme Cultivation content is intended for adults. Please exit the site if you are under 21.
         </p>
+
+        {/* Reverify entry point */}
+        <button
+          onClick={() => setOpen(true)}
+          className="mt-8 rounded-full bg-emerald-700 px-6 py-2 text-white hover:bg-emerald-800 transition"
+        >
+          Over 21 and misclicked?
+        </button>
       </div>
+
+      {/* Confirm modal */}
+      {open && (
+        <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4">
+          <div className="w-full max-w-md rounded-2xl bg-white p-6 text-black shadow-2xl">
+            <h2 className="text-xl font-bold mb-3">Confirm you are 21+</h2>
+            <p className="text-sm text-neutral-600 mb-4">
+              By continuing you confirm you are at least 21 years old and it is legal to view this content in your location.
+            </p>
+
+            <label className="flex items-center gap-2 text-sm mb-5">
+              <input type="checkbox" checked={checked} onChange={(e) => setChecked(e.target.checked)} />
+              I confirm I am 21+.
+            </label>
+
+            <div className="flex justify-end gap-3">
+              <button onClick={() => setOpen(false)} className="rounded-full px-4 py-2 bg-neutral-100">
+                Cancel
+              </button>
+              <button
+                onClick={confirm}
+                disabled={!checked}
+                className={`rounded-full px-4 py-2 text-white ${checked ? "bg-emerald-700 hover:bg-emerald-800" : "bg-emerald-300 cursor-not-allowed"}`}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -400,25 +939,39 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+function getCookie(name: string) {
+  return document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(name + "="))
+    ?.split("=")[1];
+}
+
+function setCookie(name: string, value: string, maxAgeSeconds = 60 * 60 * 24 * 365) {
+  document.cookie = `${name}=${value}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax; Secure`;
+}
+
 export default function AgeGate() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const v = typeof window !== "undefined" && localStorage.getItem("ageVerified");
-    if (v !== "true") setOpen(true);
+    const v = getCookie("ageVerified"); // "true" | "false" | undefined
+    // Prompt only when not explicitly false and not already verified
+    if (v !== "true" && window.location.pathname === "/") setOpen(true);
   }, []);
 
   if (!open) return null;
 
   function yes() {
-    localStorage.setItem("ageVerified", "true");
+    setCookie("ageVerified", "true");
     setOpen(false);
+    // stay on page
   }
+
   function no() {
-    localStorage.setItem("ageVerified", "false");
-    setOpen(false);               // close the box
-    router.push("/underage");     // then go to the underage screen
+    setCookie("ageVerified", "false");
+    setOpen(false);
+    router.replace("/underage");
   }
 
   return (
@@ -437,24 +990,23 @@ export default function AgeGate() {
         </h2>
 
         <div className="mb-5 flex items-center justify-center gap-3">
-          <button
-            onClick={yes}
-            className="rounded-full bg-emerald-600 px-6 py-2 text-white hover:bg-emerald-700 transition"
-          >
+          <button onClick={yes} className="rounded-full bg-emerald-600 px-6 py-2 text-white hover:bg-emerald-700 transition">
             Yes
           </button>
-          <button
-            onClick={no}
-            className="rounded-full bg-emerald-100 px-6 py-2 text-emerald-900 hover:bg-emerald-200 transition"
-          >
+          <button onClick={no} className="rounded-full bg-emerald-100 px-6 py-2 text-emerald-900 hover:bg-emerald-200 transition">
             No
           </button>
         </div>
 
         <p className="text-center text-sm text-neutral-600">
           By entering this site you agree to our{" "}
-          <a href="/terms" className="font-semibold underline">Terms of Use</a> and{" "}
-          <a href="/privacy" className="font-semibold underline">Privacy Policy</a>.
+          <a href="https://github.com/stafaa03-eng/CREME-support/blob/main/TermsOfService.md" target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+            Terms of Use
+          </a>{" "}
+          and{" "}
+          <a href="https://github.com/stafaa03-eng/CREME-support/blob/main/PrivacyPolicy.md" target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+            Privacy Policy
+          </a>.
         </p>
       </div>
     </div>
@@ -477,8 +1029,9 @@ import Image from "next/image";
 const links = [
   { href: "/", label: "Home" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/find-us", label: "Find Us" },
   { href: "/contact", label: "Contact" },
+  { href: "/creme", label: "CRÈME", special: true },
 ];
 
 export default function NavBar() {
@@ -504,11 +1057,15 @@ export default function NavBar() {
 
         {/* centered links */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-10 text-sm font-semibold">
-          {links.map((l) => (
+{links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="relative py-2 after:absolute after:left-0 after:right-0 after:-bottom-2 after:h-0.5 after:scale-x-0 after:bg-emerald-500 after:transition hover:after:scale-x-100"
+              className={
+                l.special
+                  ? "text-[gold] font-extrabold tracking-wide transition hover:scale-105 [text-shadow:_0_0_4px_#10b981,_0_0_6px_#10b981] stroke-[0.4px] stroke-emerald-500"
+                  : "relative py-2 after:absolute after:left-0 after:right-0 after:-bottom-2 after:h-0.5 after:scale-x-0 after:bg-emerald-500 after:transition hover:after:scale-x-100"
+              }
             >
               {l.label}
             </Link>
@@ -516,6 +1073,61 @@ export default function NavBar() {
         </div>
       </div>
     </nav>
+  );
+}
+
+----- CONTENT END -----
+===== FILE END =====
+
+===== FILE START =====
+NAME: PhonePlayer.tsx
+DIR: components
+RELATIVE_PATH: components\PhonePlayer.tsx
+CONTENT_TYPE: text
+----- CONTENT BEGIN -----
+"use client";
+import { useRef, useEffect } from "react";
+
+export default function PhonePlayer() {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  // ensure autoplay works when tab refocuses
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    document.addEventListener("visibilitychange", tryPlay);
+    return () => document.removeEventListener("visibilitychange", tryPlay);
+  }, []);
+
+  return (
+    <div className="relative mx-auto w-[320px] sm:w-[360px] md:w-[420px]">
+      {/* phone body */}
+      <div className="relative h-[640px] sm:h-[720px] md:h-[820px] rounded-[36px] border-[12px] border-black bg-black shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
+        {/* screen */}
+        <div className="absolute inset-[10px] rounded-[24px] overflow-hidden bg-black">
+          <video
+            ref={ref}
+            src="/assets/SickEdit.mp4"
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* subtle gradient removed — using solid black */}
+        </div>
+
+        {/* notch */}
+        <div className="pointer-events-none absolute left-1/2 top-2 -translate-x-1/2 h-5 w-36 rounded-b-2xl bg-black" />
+
+        {/* side buttons (decorative) */}
+        <div className="pointer-events-none absolute -left-2 top-28 h-16 w-1.5 rounded-full bg-neutral-800" />
+        <div className="pointer-events-none absolute -right-2 top-24 h-10 w-1.5 rounded-full bg-neutral-800" />
+        <div className="pointer-events-none absolute -right-2 top-40 h-20 w-1.5 rounded-full bg-neutral-800" />
+      </div>
+    </div>
   );
 }
 
@@ -745,9 +1357,12 @@ CONTENT_TYPE: text
 ----- CONTENT END -----
 ===== FILE END =====
 
-# Total files dumped: 21
+# Total files dumped: 25
 # File list:
 - app\contact\page.tsx
+- app\creme\page.tsx
+- app\find-us\page.tsx
+- app\gallery\page.tsx
 - app\globals.css
 - app\layout.tsx
 - app\page.tsx
@@ -757,6 +1372,7 @@ CONTENT_TYPE: text
 - app\underage\page.tsx
 - components\AgeGate.tsx
 - components\NavBar.tsx
+- components\PhonePlayer.tsx
 - lib\utils.ts
 - next.config.ts
 - package.json
