@@ -4,7 +4,6 @@ import { useRef, useEffect } from "react";
 export default function PhonePlayer() {
   const ref = useRef<HTMLVideoElement>(null);
 
-  // ensure autoplay works when tab refocuses
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
@@ -16,29 +15,23 @@ export default function PhonePlayer() {
 
   return (
     <div className="relative mx-auto w-[320px] sm:w-[360px] md:w-[420px]">
-      {/* phone body */}
-      <div className="relative h-[640px] sm:h-[720px] md:h-[820px] rounded-[36px] border-[12px] border-black bg-black shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
-        {/* screen */}
-        <div className="absolute inset-[10px] rounded-[24px] overflow-hidden bg-black">
-          <video
-            ref={ref}
-            src="/assets/SickEdit.mp4"
-            className="h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-          {/* subtle gradient removed — using solid black */}
-        </div>
+      {/* screen */}
+      <div className="relative h-[640px] sm:h-[720px] md:h-[820px] rounded-[40px] overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
+        <video
+          ref={ref}
+          src="/assets/SickEdit.mp4"
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
 
-        {/* notch */}
-        <div className="pointer-events-none absolute left-1/2 top-2 -translate-x-1/2 h-5 w-36 rounded-b-2xl bg-black" />
-
-        {/* side buttons (decorative) */}
-        <div className="pointer-events-none absolute -left-2 top-28 h-16 w-1.5 rounded-full bg-neutral-800" />
-        <div className="pointer-events-none absolute -right-2 top-24 h-10 w-1.5 rounded-full bg-neutral-800" />
-        <div className="pointer-events-none absolute -right-2 top-40 h-20 w-1.5 rounded-full bg-neutral-800" />
+      {/* thin outline + notch */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 rounded-[40px] ring-[6px] ring-black/90" />
+        <div className="absolute left-1/2 top-3 -translate-x-1/2 h-6 w-24 rounded-full bg-black/90" />
       </div>
     </div>
   );
